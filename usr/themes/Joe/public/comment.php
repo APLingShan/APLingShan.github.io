@@ -1,4 +1,4 @@
-<?php $this->comments()->to($comments); ?>
+﻿<?php $this->comments()->to($comments); ?>
 
 <div class="joe_comment" id="comment_module">
 	<h3 class="joe_comment__title">评论 <?php if ($this->allow('comment') && $this->options->JCommentStatus !== "off") : ?>(<?php $this->commentsNum(); ?>)<?php endif; ?></h3>
@@ -130,6 +130,7 @@ function threadedComments($comments, $options)
 							<em class="waiting">（评论审核中...）</em>
 						<?php endif; ?>
 						<div class="agent"><?php _getAgentOS($comments->agent); ?> · <?php _getAgentBrowser($comments->agent); ?></div>
+							<?php $comments->location(); ?>
 					</div>
 					<div class="substance">
 						<?php _getParentReply($comments->parent) ?>
